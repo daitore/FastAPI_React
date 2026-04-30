@@ -20,7 +20,7 @@ const Form  = () => {
         <>
             <form>
                 <label htmlFor="name">
-                    名前
+                    お名前
                  <input
                 id="name"
                 type="text"
