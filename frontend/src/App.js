@@ -1,12 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import TestComponent from "./components/TestComponent";
-import Form from './components/templates/Form';
+import {Routes, Route, Router} from 'react-router-dom'
+import Submit from "./components/pages/Submit";
+import Results from "./components/pages/Results";
+
 
 function App() {
   return(
     <>
-        <Form />
+        <Routes>
+            <Route path="/" element={<Submit/>} />
+            <Route path="/Results"  element={<Results />} />
+        </Routes>
     </>
   );
 }
