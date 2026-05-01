@@ -1,5 +1,6 @@
 import React ,{useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {Container,Box} from "@mui/material";
 
 // フォームの入力値を管理するためのコンポーネント,データ保管場所（state）
 const Form  = () => {
@@ -16,19 +17,30 @@ const Form  = () => {
         console.log({...form});
         setForm({...form,[name]:value});
     };
-
+    // ページ遷移のための関数
     const navigate = useNavigate();
-
-    const goToResult = () => {
-        navigate("/Results");
+    // 結果ページへ遷移する関数
+    const goToResult = (form) => {
+        navigate("/Results",{state:form});
     }
+    // フォームが送信されたときの処理を行う関数
     const handleSubmit = (e) => {
-        goToResult()
+        goToResult(form)
     };
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
+        <Container>
+            <Box
+                sx={{
+                    marginTop: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                }}
+            >
+                <form onSubmit={handleSubmit}>
+                <h2>アンケート提出</h2>
+                <br/>
                 <label htmlFor="name">
                     名前
                  <input
@@ -88,16 +100,19 @@ const Form  = () => {
                         <textarea
                             id="comment"
                             name="comment"
+                            placeholder="コメントを入れてください"
                             value={form.comment}
                             onChange={handleInputChange}
                         />
                     </div>
 
-                    <div>
-                         <button type="submit">送信</button>
+                    <div style={{ textAlign: "center" }}>
+                        <button type="submit">送信</button>
                     </div>
+
             </form>
-        </>
+            </Box>
+        </Container>
     );
 };
 export default Form
