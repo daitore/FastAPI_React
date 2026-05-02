@@ -22,7 +22,7 @@ const Form  = () => {
     // 結果ページへ遷移する関数
     const goToResult = (form) => {
         navigate("/Results",{state:form});
-    }
+    };
     // フォームが送信されたときの処理を行う関数
     const handleSubmit = (e) => {
         goToResult(form)
