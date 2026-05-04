@@ -1,6 +1,6 @@
 import React ,{useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {Container,Box} from "@mui/material";
+import {Container,Box,Typography,TextField} from "@mui/material";
 
 // フォームの入力値を管理するためのコンポーネント,データ保管場所（state）
 const Form  = () => {
@@ -39,18 +39,15 @@ const Form  = () => {
                 }}
             >
                 <form onSubmit={handleSubmit}>
-                <h2>アンケート提出</h2>
-                <br/>
-                <label htmlFor="name">
-                    名前
-                 <input
-                id="name"
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleInputChange}
-                />
-                </label>
+                    <Typography variant="h5" >アンケート提出</Typography>
+
+                    <TextField
+                        id="outlined-basic"
+                        label="名前"
+                        variant="outlined"
+                        value={form.name}
+                        onChange={handleInputChange}/>
+                    
                 <br />
                 <label htmlFor="age">
                     年齢
