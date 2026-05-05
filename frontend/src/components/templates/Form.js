@@ -97,16 +97,16 @@ const Form  = () => {
                             </RadioGroup>
                         </Box>
                     </Box>
-                 <TextField
-                     id="outlined-basic"
-                     label="コメント"
-                     variant="outlined"
-                     onChange={handleInputChange}
-                     value={form.comment}
-                     fullWidth
-                     sx={{mt:3}}
-                     name={"comment"}
-                 />
+                    <TextField
+                        id="outlined-basic"
+                        label="コメント"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                        value={form.comment}
+                        fullWidth
+                        sx={{mt:3}}
+                        name={"comment"}
+                    />
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
                         <Button
                             variant="contained"
