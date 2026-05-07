@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes, Route, Router} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Submit from "./components/pages/Submit";
 import Results from "./components/pages/Results";
 
